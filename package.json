@@ -1,0 +1,30 @@
+{
+  "name": "generate-rfc",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "npm run build && node ./lib/index.mjs",
+    "build": "gen-esm-wrapper . ./lib/index.mjs",
+    "prepack": "npm run build"
+  },
+  "keywords": [
+    "rfc"
+  ],
+  "author": {
+    "name": "Essau Ramirez",
+    "email": "essau.ramirez@bekind.software",
+    "url": "https://bekind.software"
+  },
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "require": "./lib/index.js",
+      "import": "./lib/index.mjs"
+    },
+    "./": "./"
+  },
+  "devDependencies": {
+    "gen-esm-wrapper": "^1.1.3"
+  }
+}
