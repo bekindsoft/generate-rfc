@@ -1,18 +1,15 @@
-import * as Lab from '@hapi/lab';
-import { expect } from '@hapi/code';
+import * as Lab from "@hapi/lab";
+import { expect } from "@hapi/code";
 import GenerateRfc from "../lib/index.mjs";
 
 const lab = Lab.script();
 export { lab };
 
-
-lab.experiment('generate-rfc', () => {
-
-  lab.test('generates AMLO rfc', () => {
-
+lab.experiment("generate-rfc", () => {
+  lab.test("generates AMLO rfc", () => {
     const res = GenerateRfc.generateRfc({
       firstName: "Andres",
-      secondName: 'Manuel',
+      secondName: "Manuel",
       lastName: "Lopez",
       secondLastName: "Obrador",
       dayOfBirth: 13,
@@ -20,13 +17,13 @@ lab.experiment('generate-rfc', () => {
       yearOfBirth: 1953,
     });
 
-    expect(res).to.equal('LOOA531113FI5');
+    expect(res).to.equal("LOOA531113FI5");
   });
 
-  lab.test('generates EPN rfc', () => {
+  lab.test("generates EPN rfc", () => {
     const res = GenerateRfc.generateRfc({
       firstName: "Enrique",
-      secondName: '',
+      secondName: "",
       lastName: "Peña",
       secondLastName: "Nieto",
       dayOfBirth: 20,
@@ -34,13 +31,13 @@ lab.experiment('generate-rfc', () => {
       yearOfBirth: 1966,
     });
 
-    expect(res).to.equal('PENX660720CV0');
+    expect(res).to.equal("PENX660720CV0");
   });
 
-  lab.test('generates test rfc', () => {
+  lab.test("generates test rfc", () => {
     const res = GenerateRfc.generateRfc({
       firstName: "Emma",
-      secondName: '',
+      secondName: "",
       lastName: "Gomez",
       secondLastName: "Díaz",
       dayOfBirth: 31,
@@ -48,6 +45,6 @@ lab.experiment('generate-rfc', () => {
       yearOfBirth: 1956,
     });
 
-    expect(res).to.equal('GODE561231GR8');
+    expect(res).to.equal("GODE561231GR8");
   });
 });

@@ -1,8 +1,12 @@
 {
   "name": "generate-rfc",
-  "version": "0.1.0",
-  "description": "",
+  "version": "0.1.1",
+  "description": "Library to generate Mexican RFCs according to the specification",
   "main": "./lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bekindsoft/generate-rfc.git"
+  },
   "scripts": {
     "test": "npm run build && lab",
     "build": "gen-esm-wrapper . ./lib/index.mjs",
